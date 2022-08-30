@@ -2,20 +2,30 @@
    <section>
        <div id="NavHolder" class="fixed-top">
            <div id="Navbar" class="container">
-               <div id="Navbar-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" style="color: red">
-                   Shop
-               </div>
-
-               <!-- <div class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+               <!-- <div id="Navbar-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" style="color: red">
                    Shop
                </div> -->
 
-               <div id="Navbar-center">
-                   Xena Vermont
+               <div type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="z-index: 5; font-size: 1rem" class="fw-light">
+                   Shop
                </div>
 
-               <div id="Navbar-right">
-                   right
+               <div id="Navbar-center">
+                   <router-link to="/" id="Logo">
+                   Xena Vermont</router-link>
+               </div>
+
+               <div id="Navbar-right" class="fw-light">
+
+                   <router-link to="/login" id="loginlink">
+
+                       <i class="bi bi-person"></i>
+
+                       </router-link>
+                    <router-link to="/">
+                        <i class="bi bi-bag" id="chart"></i>
+                    </router-link>
+                  
                </div>
            </div>
        </div>
@@ -55,7 +65,6 @@
     justify-content: center;
 
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
 }
 
 #Navbar-right{
@@ -65,6 +74,21 @@
 
 #Navbar-left, #Navbar-center, #Navbar-right{
     vertical-align: center;
+    font-size: 1.2rem;
 }
 
+#Logo {
+  text-decoration: none;
+  color: red;
+}
+i{
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+#loginlink, #chart{
+   text-decoration: none;
+  color: red;
+  
+}
 </style>

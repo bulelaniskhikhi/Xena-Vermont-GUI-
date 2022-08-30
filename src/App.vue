@@ -1,17 +1,23 @@
 <template>
+<section style="background-color: black">
   <NavBarComponet/>
   <SideBarComponent/>
-  <LandingView/>
+  <router-view/>
+  <FooterComponet/>
+</section>
+  
 
 </template>
 
 <script>
 import NavBarComponet from '@/components/NavBarComponent.vue'
-import LandingView from '@/views/LandingView.vue'
 import SideBarComponent from '@/components/SidebarComponet.vue'
+import FooterComponet from '@/components/FooterComponet.vue'
+
+import LandingView from '@/views/LandingView.vue'
 
 export default {
-  components: {NavBarComponet, LandingView, SideBarComponent}
+  components: {NavBarComponet, LandingView, SideBarComponent, FooterComponet}
 }
 </script>
 

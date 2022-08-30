@@ -1,6 +1,6 @@
 <template>
 
-    <section class="collapse-show collapse-horizontal" id="collapseWidthExample">
+    <!-- <section class="collapse-show collapse-horizontal" id="collapseWidthExample">
         
         <div id="sideNav" class="flex-shrink-0 p-3" style="width: 350px; background-color: black; height: 100vh; color: red;">
     
@@ -71,17 +71,17 @@
     </ul>
     
 </div>
-    </section>
+    </section> -->
 
-    <!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
+    <div class="offcanvas offcanvas-start offcanvas-show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="z-index: 4; background-color: black">
+  <!-- <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
+  </div> -->
+  <div class="offcanvas-body" style="padding-top: 5rem">
     <p>Try scrolling the rest of the page to see this option in action.</p>
   </div>
-</div> -->
+</div>
 
 </template>
 
@@ -102,9 +102,9 @@ section{
     padding: 0; */
 
     color: red;
-    z-index: 10;
-    position: absolute;
-    bottom: 0;
+    z-index: 2;
+    /* position: absolute; */
+    /* bottom: 0; */
 }
 
 #products{
@@ -115,4 +115,6 @@ a{
     color: white;
     text-decoration: none;
 }
+
+
 </style>
