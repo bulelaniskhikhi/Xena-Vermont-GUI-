@@ -1,14 +1,19 @@
 <template>
-  <div>
+  <div v-if="products">
     <div class="container" style="padding-top: 20vh">
 
     <div class="row">
       <div id="holder" class="col-sm-12 col-md-6 col-lg-4"  v-for="product in products" :key="product">
 
-      <div class="card"  style=" border: none; border-radius: none; margin: 20px; ">
-        <img id="prodImg" :src="product.frontCoverImg" class="card-img-top img-fluid" style="width: 25rem; height: 25rem" />
-          
-      </div>
+      <router-link id="prodLink" :to="{name : 'product' , params : { id : product.id} }">
+
+        <div class="card"  style=" border: none; border-radius: none; margin: 20px; ">
+
+        <img id="prodImg" :src="product.frontCoverImg" class="card-img-top img-fluid" style="width: 25rem; height: 25rem">
+         </div>
+      </router-link>
+     
+    
 
 <p id="prodTitle" style="color: red; display: flex; justify-content: center;">{{product.title}}</p>
       </div>

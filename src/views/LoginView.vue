@@ -4,7 +4,7 @@
    <div class="container" style="padding-top: 5rem; ">
 
 <div id="box" style="display: inline-flex;
-  flex-wrap: wrap;width: 100% ">
+  flex-wrap: wrap;width: 100% ; color: red;">
 
     <div id="Login" >
        <form id="LoginForm" @submit.prevent="login">
@@ -122,9 +122,9 @@ input{
 }
 
 button {
-    background: #000;
+    background: red;
     width: 40%;
-    color: white;
+    color: black;
     margin-top: 2rem;
     border: none;
 }
