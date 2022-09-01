@@ -21,6 +21,12 @@
 
     </div>
   </div>
+
+  <div style="height: 100vh; display: flex; justify-content: center; align-self: center" v-else>
+    <div style="display: flex; justify-content: center; align-self: center">
+        <img src="https://i.postimg.cc/8z2PHmgR/tumblr-m8tg87y-Ee-J1r1rrxzo1-500.gif"  style="width: 100%; height: auto">
+    </div>
+  </div>
 </template>
 
 <script>
@@ -47,6 +53,9 @@ transition: opacity ease-in-out 0.2s ;
 #holder:hover #prodTitle{
  opacity: 1;
  
+}
+.card{
+  background: rgba(255, 0, 0, 0);
 }
 
 </style>
