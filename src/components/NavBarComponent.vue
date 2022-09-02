@@ -22,9 +22,12 @@
                        <i class="bi bi-person"></i>
 
                        </router-link>
-                    <router-link to="/">
-                        <i class="bi bi-bag" id="chart"></i>
-                    </router-link>
+                       
+                    <div type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="bi bi-bag" id="chart">
+                            
+                        </i>
+                    </div>
                   
                </div>
            </div>

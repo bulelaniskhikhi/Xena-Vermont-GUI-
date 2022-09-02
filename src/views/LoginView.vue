@@ -1,133 +1,142 @@
 <template>
 
-
-   <div class="container" style="padding-top: 5rem; ">
-
-<div id="box" style="display: inline-flex;
-  flex-wrap: wrap;width: 100% ; color: red;">
-
-    <div id="Login" >
-       <form id="LoginForm" @submit.prevent="login">
+  <div
+    class="container"
+    style="
+      padding-top: 5rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div
+      id="box"
+      style="display: inline-flex; flex-wrap: wrap; width: 100%; color: red"
+    >
+      <div id="Login">
+        <form id="LoginForm" @submit.prevent="login">
           <div id="LoginFormTitle">
-              <h3>LOGIN</h3>
+            <h3>LOGIN</h3>
           </div>
           <div>
-              <label for="" class="fw-light">EMAIL</label>
-              <br>
-              <input v-model="userEmail" type="email" required>
+            <label for="" class="fw-light">EMAIL</label>
+            <br />
+            <input v-model="userEmail" type="email" required />
           </div>
 
-          <br>
-
-          <div>
-              <label for="" class="fw-light">PASSWORD</label>
-              <br>
-              <input v-model="userpassword" type="password" required>
-          </div>
+          <br />
 
           <div>
-              <button type="submit" style="width: 100%">LOGIN</button>
+            <label for="" class="fw-light">PASSWORD</label>
+            <br />
+            <input v-model="userpassword" type="password" required />
           </div>
-       </form>
-    </div>
-   
+
+          <div>
+            <button type="submit" style="width: 100%">LOGIN</button>
+          </div>
+        </form>
+      </div>
 
       <div id="Register">
         <form id="RegisterForm">
-            <div id="RegisterFormTitle">
-                <h3>REGISTER</h3>
-            </div>
-
-            <div>
-              <label for="" class="fw-light">USERNAME</label>
-              <br>
-              <input type="text" required>
+          <div id="RegisterFormTitle">
+            <h3>REGISTER</h3>
           </div>
-
-          <br>
-
-            <div>
-              <label for="" class="fw-light">EMAIL</label>
-              <br>
-              <input type="email" required>
-          </div>
-
-          <br>
 
           <div>
-              <label for="" class="fw-light">PASSWORD</label>
-              <br>
-              <input type="password" required>
+            <label for="" class="fw-light">USERNAME</label>
+            <br />
+            <input type="text" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="" class="fw-light">EMAIL</label>
+            <br />
+            <input type="email" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="" class="fw-light">PASSWORD</label>
+            <br />
+            <input type="password" required />
           </div>
           <div>
-              <button type="submit" style="width: 100%">CREATE</button>
+            <button type="submit" style="width: 100%">CREATE</button>
           </div>
         </form>
+      </div>
     </div>
-
-</div>
-
-
-</div>
-
-
-    
+  </div>
+  
 </template>
 <script>
-export default{
-    data(){
-        return{
-            userEmail: null,
-            userpassword: null,
-        }
+export default {
+  data() {
+    return {
+      userEmail: null,
+      userpassword: null,
+    };
+  },
+  methods: {
+    login() {
+      return this.$store.dispatch("login", {
+        email: this.email,
+        userpassword: this.userpassword,
+      });
     },
-    methods:{
-        login(){
-            return this.$store.dispatch('login',
-            {
-              email: this.email,
-              userpassword: this.userpassword
-            })
-        }
-    }
-}
+  },
+};
 </script>
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto:wght@100&display=swap'); */
 
-#LoginForm{
-    /* background-color: gray; */
+#LoginForm {
 }
 
-#Login{
-   width: 30%;
+#Login {
+  width: 30%;
 }
 
-#Register{
-    width: 30%;
-    
+#Register {
+  width: 30%;
 }
 
-#RegisterForm{
-    /* background-color: darkgray;  */
+#RegisterForm {
 }
 
-#LoginFormTitle, #RegisterFormTitle{
-    margin-bottom: 3rem;
-    font-family: 'Montserrat', sans-serif;
+#LoginFormTitle,
+#RegisterFormTitle {
+  margin-bottom: 3rem;
+  font-family: "Gruppo", cursive;
 }
 
-input{
-    border: solid 1px #000;
-    width: 100%;
+input {
+  border: solid 1px #000;
+  width: 100%;
+  color: red;
+  font-family: "Gruppo", cursive;
 }
 
 button {
-    background: red;
-    width: 40%;
-    color: black;
-    margin-top: 2rem;
-    border: none;
+  background: red;
+  width: 40%;
+  color: black;
+  margin-top: 2rem;
+  border: none;
+  font-family: "Gruppo", cursive;
+  padding: 0.3rem;
+
+  transition: color, background-color 0.8s; 
+}
+
+button:hover{
+    color: red;
+    background-color: black;
 }
 
 input:focus {
@@ -135,12 +144,13 @@ input:focus {
   box-shadow: none;
 }
 
-label{
-    margin-bottom: 5px;
+label {
+  margin-bottom: 5px;
+  font-family: "Gruppo", cursive;
 }
 
-#box>* {
-        flex: 1 1 180px;
-        margin: 40px;
-    }
+#box > * {
+  flex: 1 1 180px;
+  margin: 40px;
+}
 </style>
