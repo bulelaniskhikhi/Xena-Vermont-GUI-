@@ -28,6 +28,13 @@ const routes = [
     component: function () {
       return import('../views/AdminView.vue')
     } 
+  },
+  {
+    path: '/products/rating/:esrbRating',
+    name: 'rating',
+    component: function () {
+      return import('../views/EsrbRating.vue')
+    } 
   }
 ]
 

@@ -59,7 +59,7 @@
                     <strong>ESRD: </strong><em>{{ product.esrbRating }}</em>
                   </p>
 
-                  <button id="cartbtn">
+                  <button id="cartbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
                     <strong>Cart</strong>
                   </button>
 
@@ -80,6 +80,7 @@
 
 
       <div class="row" style="margin-bottom: 3rem; margin-top: 3rem">
+      
         <div class="col-lg-6 col-sm-12 col-md-12">
           <div class="book-container">
             <div class="book">
@@ -121,6 +122,9 @@
         <div class="col-12">
           <div style="display: flex; justify-content: center">
             <img class="img-fluid" :src="product.frontDiscCoverImg" />
+          </div>
+          <div style="display: flex; justify-content: center">
+            <p style="color: red"><em>Disc Cover:</em></p>
           </div>
         </div>
       </div>
@@ -234,7 +238,7 @@ export default {
   color: black;
   border: none;
   
-  transition: color, background 1s;
+  transition: color, background 0.8s;
 
   font-family: "Gruppo", cursive;
 }

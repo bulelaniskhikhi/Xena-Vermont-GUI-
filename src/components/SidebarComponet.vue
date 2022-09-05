@@ -26,9 +26,30 @@
 
           <div>
             <ul class="collapse-show" id="collapseExample">
-              <li>teen</li>
-              <li>mature</li>
-              <li>everyone</li>
+              <li>
+                <router-link to="/products/rating/T ~ Teen" >
+                <button>
+                  teen
+                </button>
+              </router-link>
+              </li>
+              
+                <li>
+                  <router-link to="/products/rating/M ~ Mature">
+                <button>
+                  mature
+                </button>
+              </router-link>
+                </li>
+              
+                <li>
+                  <router-link to="/products/rating/E ~ Everyone">
+                <button>
+                  everyone
+                </button>
+              </router-link>
+                </li>
+              
             </ul>
           </div>
         </li>
@@ -106,7 +127,7 @@
         <ul >
             <li>
                 <router-link to="/login" style="text-decoration: none; ">
-                <button style="color: black; background-color: red; padding: 5px; font-family: 'Gruppo', cursive; width: 70%; border: none">
+                <button id="loginbtn" style=" font-family: 'Gruppo', cursive; width: 70%; border: none">
          login/ Register
                 </button>
                 </router-link>
@@ -115,7 +136,7 @@
             </li>
             <li>
                 <router-link to="/admin" style="text-decoration: none; ">
-                <button style="color: black; background-color: red; padding: 5px; font-family: 'Gruppo', cursive; width: 70%; border: none; margin-top: 1rem">
+                <button id="adminbtn" >
          admin
                 </button>
                 </router-link>
@@ -157,5 +178,39 @@ ul{
 li{
     color: red;
     font-weight: lighter;
+}
+
+#adminbtn{
+  font-family: 'Gruppo', cursive;
+  color: black; 
+  background-color: red; 
+  padding: 5px;
+  width: 70%; 
+  border: none; 
+  margin-top: 1rem;
+
+  transition: color, background-color 0.8s;
+}
+
+#adminbtn:hover{
+  color: white;
+  background-color: black;
+}
+
+#loginbtn {
+  font-family: 'Gruppo', cursive;
+  color: black; 
+  background-color: red; 
+  padding: 5px;
+  width: 70%; 
+  border: none; 
+  margin-top: 1rem;
+
+  transition: color, background-color 0.8s;
+}
+
+#loginbtn:hover{
+  color: white;
+  background-color: black;
 }
 </style>

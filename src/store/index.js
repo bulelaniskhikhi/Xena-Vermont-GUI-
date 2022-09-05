@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     allprod: null,
-    product: null
+    product: null,
+    ratingproduct: null
   },
   getters: {
   },
@@ -13,7 +14,9 @@ export default createStore({
     },
     singleprod(state, products) {
       state.product = products
-      
+    },
+      giveratingprod(state, products) {
+        state.ratingproduct = products
     }
   },
   actions: {
@@ -26,6 +29,11 @@ export default createStore({
       fetch(`https://xena-vermont-api.herokuapp.com/products/${id}`)
       .then(res => res.json())
       .then(data => context.commit('singleprod', data.results[0]))
+    },
+    getratingprod(context, esrbRating) {
+      fetch(`https://xena-vermont-api.herokuapp.com/products/rating/${esrbRating}`)
+      .then(res => res.json())
+      .then(data => context.commit('giveratingprod', data.results))
     }
   },
   modules: {
