@@ -39,9 +39,13 @@
           >
             {{ product.title }}
           </p>
+
+          
         </div>
+        
       </div>
     </div>
+
 
 </template>
 

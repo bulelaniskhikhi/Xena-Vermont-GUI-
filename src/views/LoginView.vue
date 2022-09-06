@@ -30,7 +30,7 @@
           <div>
             <label for="" class="fw-light">PASSWORD</label>
             <br />
-            <input v-model="userpassword" type="password" required />
+            <input v-model="userPassword" type="password" required />
           </div>
 
           <div>
@@ -40,7 +40,7 @@
       </div>
 
       <div id="Register">
-        <form id="RegisterForm">
+        <form @submit.prevent="register" id="RegisterForm">
           <div id="RegisterFormTitle">
             <h3>REGISTER</h3>
           </div>
@@ -48,7 +48,7 @@
           <div>
             <label for="" class="fw-light">USERNAME</label>
             <br />
-            <input type="text" required />
+            <input v-model="userNAme" type="text" required />
           </div>
 
           <br />
@@ -56,7 +56,7 @@
           <div>
             <label for="" class="fw-light">EMAIL</label>
             <br />
-            <input type="email" required />
+            <input v-model="userEmailReg" type="email" required />
           </div>
 
           <br />
@@ -64,7 +64,7 @@
           <div>
             <label for="" class="fw-light">PASSWORD</label>
             <br />
-            <input type="password" required />
+            <input v-model="userPasswordReg" type="password" required />
           </div>
           <div>
             <button type="submit" style="width: 100%">CREATE</button>
@@ -80,14 +80,27 @@ export default {
   data() {
     return {
       userEmail: null,
-      userpassword: null,
+      userPassword: null,
+      userName: null,
+      userRole: "user",
+
+       userEmailReg: null,
+      userPasswordReg: null,
     };
   },
   methods: {
     login() {
       return this.$store.dispatch("login", {
-        email: this.email,
-        userpassword: this.userpassword,
+        userEmail: this.userEmail,
+        userPassword: this.userPassword,
+      });
+    },
+    register() {
+      return this.$store.dispatch("register", {
+        userEmail: this.userEmailReg,
+        userPassword: this.userPasswordReg,
+        userRole: this.userRole,
+        userName: this.userName
       });
     },
   },

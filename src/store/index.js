@@ -34,7 +34,30 @@ export default createStore({
       fetch(`https://xena-vermont-api.herokuapp.com/products/rating/${esrbRating}`)
       .then(res => res.json())
       .then(data => context.commit('giveratingprod', data.results))
-    }
+    },
+    login(context, payload) {
+      fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
+        method: 'PATCH', 
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+    },
+      register(context, payload) {
+        fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
+        method: '', 
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      }
+    
   },
   modules: {
   }
