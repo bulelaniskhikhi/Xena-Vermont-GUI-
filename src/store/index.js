@@ -36,7 +36,8 @@ export default createStore({
       .then(data => context.commit('giveratingprod', data.results))
     },
     login(context, payload) {
-      fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
+      fetch(`http://localhost:3000/users/`, {
+      // fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
         method: 'PATCH', 
         body: JSON.stringify(payload),
         headers: {
@@ -44,11 +45,14 @@ export default createStore({
         }
       })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)
+      
+      })
     },
       register(context, payload) {
         fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
-        method: '', 
+        method: 'POST', 
         body: JSON.stringify(payload),
         headers: {
           'Content-type': 'application/json; charset=UTF-8'

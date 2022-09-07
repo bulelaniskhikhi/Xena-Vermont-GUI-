@@ -218,5 +218,6 @@ button{
   background: none;
   color: red;
   font-weight: lighter;
+  border: none;
 }
 </style>

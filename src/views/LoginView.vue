@@ -49,7 +49,7 @@
           <div>
             <label for="" class="fw-light">USERNAME</label>
             <br />
-            <input v-model="userNAme" type="text" required />
+            <input v-model="userName" type="text" required />
           </div>
 
           <br />
