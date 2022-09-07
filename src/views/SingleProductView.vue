@@ -147,6 +147,7 @@
 export default {
   mounted() {
     this.$store.dispatch("fetchSingleProd", this.$route.params.id);
+    this.$store.commit("singleprod", null);
   },
   computed: {
     product() {

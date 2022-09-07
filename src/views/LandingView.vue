@@ -11,8 +11,23 @@
 
     <!-- filter -->
     <div class="container" style="margin-top: 3rem">
-      <div style="width: 100%; height: 3rem; background-color: red; display: flex; justify-content: center; align-items: center">
-        filter
+      <div style="width: 100%; height: 3rem; display: flex; justify-content: center; align-items: center">
+
+      <input id="landingsearchfilter" type="search" placeholder="Search Products" class="search" v-model="search" style="margin-right: 20px" >
+
+       <div>
+         <select name="" id="">
+           <option value=""></option>
+           <option value=""></option>
+           <option value=""></option>
+           <option value=""></option>
+           <option value=""></option>
+         </select>
+         <select name="" id="">
+           <option value=""></option>
+           <option value=""></option>
+         </select>
+       </div>
       </div>
     </div>
 
@@ -67,12 +82,22 @@
 
 <script>
 export default {
+  props: ["product"],
+
+  data() {
+        return {
+            search: ''
+        }
+    },
+
   mounted() {
     this.$store.dispatch("getprod");
   },
   computed: {
     products() {
-      return this.$store.state.allprod;
+      // return this.$store.state.allprod
+
+       return this.$store.state.allprod?.filter(allprod => { let isMatch = true; if (!allprod.title.toLowerCase().includes(this.search.toLowerCase())) { isMatch = false; } return isMatch });
     },
   },
 };
@@ -91,5 +116,32 @@ export default {
 }
 .card {
   background: rgba(255, 0, 0, 0);
+}
+
+#landingsearchfilter{
+  border: solid 2px red;
+  width: 50%;
+  color: red;
+  font-family: "Gruppo", cursive;
+  background: black;
+}
+
+#landingsearchfilter:focus{
+color: red;
+ background: black;
+ outline: none;
+  box-shadow: none;
+}
+::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: red;
 }
 </style>

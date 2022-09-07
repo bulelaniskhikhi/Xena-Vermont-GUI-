@@ -7,61 +7,63 @@
   <tbody v-if="products">
     <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th colspan="">ID</th>
+      
+      <th colspan="2">Title</th>
+      <th colspan="2">Romaji-Title</th>
+      <th colspan="2">Kanji-Title</th>
+      <th colspan="2">Back-Cover-Img</th>
+      <th colspan="2">Front-Disc-Cover-Img</th>
+      <th colspan="2">Back-Disc-Cover-Img</th>
+      <th colspan="2">Realised-Date</th>
+      <th colspan="2">Serial-Code</th>
+      <th colspan="2">Studio-Dev</th>
+      <th colspan="2">Studio-Pub</th>
+      <th colspan="2">Price-Rands</th>
+      <th colspan="2">Price-Yens</th>
+      <th colspan="2">ESRD-Rating</th>
+      <th colspan="2">ESRD-Rating-Img</th>
+      <th colspan="2">Genre</th>
+      <th colspan="2">Features</th>
+      <th colspan="2">EDIT</th>
+      <th colspan="2">DELETE</th>
     </tr>
   </thead>
+<tbody>
+  <tr v-for="product in products" :key="product" :product="product">
 
-    <tr v-for="product in products" :key="product" :product="product">
+      <td colspan="" style="width: 5rem">{{product.id}}</td>
+      <td colspan="2">{{product.title}}</td>
+      <td colspan="2">{{product.romajiTitle}}</td>
+      <td colspan="2">{{product.kanjiTitle}}</td>
+      <td colspan="2"><img :src="product.backCoverImg" style="width: 5rem"></td>
 
-      <td>{{product.id}}</td>
-      <td>{{product.title}}</td>
-      <td>{{product.romajiTitle}}</td>
-      <td>{{product.kanjiTitle}}</td>
-      <td>{{product.kanjiTitle}}</td>
-      <td><img :src="product.backCoverImg" style="width: 5rem"></td>
-
-      <td><img :src="product.frontDiscCoverImg" style="width: 5rem"></td>
-      <td><img :src="product.backDiscCoverimg" style="width: 5rem"></td>
+      <td colspan="2"><img :src="product.frontDiscCoverImg" style="width: 5rem"></td>
+      <td colspan="2"><img :src="product.backDiscCoverimg" style="width: 5rem"></td>
       
-      <td>{{product.realisedDate}}</td>
-      <td>{{product.serialCode}}</td>
-      <td>{{product.studioDev}}</td>
-      <td>{{product.studioPub}}</td>
-      <td>{{product.priceRands}}</td>
-      <td>{{product.priceYens}}</td>
-      <td>{{product.esrbRating}}</td>
-      <td><img :src="product.esrbRatingImg" style="width: 5rem" ></td>
-      <td>{{product.genre}}</td>
-      <td>{{product.features}}</td>
-      <td>
+      <td colspan="2">{{product.realisedDate}}</td>
+      <td colspan="2">{{product.serialCode}}</td>
+      <td colspan="2">{{product.studioDev}}</td>
+      <td colspan="2">{{product.studioPub}}</td>
+      <td colspan="2">{{product.priceRands}}</td>
+      <td colspan="2">{{product.priceYens}}</td>
+      <td colspan="2">{{product.esrbRating}}</td>
+      <td colspan="2"><img :src="product.esrbRatingImg" style="width: 5rem" ></td>
+      <td colspan="2">{{product.genre}}</td>
+      <td colspan="2">{{product.features}}</td>
+      <td colspan="2">
           <button type="submit" style="width: 100%">
             EDIT
           </button>
       </td>
-      <td>
+      <td colspan="2">
           <button type="submit" style="width: 100%">
             DELETE
           </button>
       </td>
     </tr>
+</tbody>
+    
   
   </tbody>
   <!-- Loading screen -->

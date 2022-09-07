@@ -64,11 +64,14 @@
           <div>
             <label for="" class="fw-light">PASSWORD</label>
             <br />
-            <input v-model="userPasswordReg" type="password" required />
+              <input v-model="userPasswordReg" type="password" required> 
+              
           </div>
+        
           <div>
             <button type="submit" style="width: 100%">CREATE</button>
           </div>
+          
         </form>
       </div>
     </div>
@@ -129,12 +132,15 @@ export default {
 }
 
 input {
-  border: solid 1px #000;
+  border: solid 2px red;
   width: 100%;
   color: red;
   font-family: "Gruppo", cursive;
+  background: black;
 }
-
+input:focus{
+  background-color: black;
+}
 button {
   background: red;
   width: 40%;
