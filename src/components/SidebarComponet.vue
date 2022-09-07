@@ -55,7 +55,7 @@
         </li>
 
         <!-- Genre -->
-        <li style="margin-bottom: 20px">
+        <!-- <li style="margin-bottom: 20px">
           <button
             type="button"
             data-bs-toggle="collapse"
@@ -77,7 +77,7 @@
               <li>RPG</li>
             </ul>
           </div>
-        </li>
+        </li> -->
 
         <!-- <li>
           <button
