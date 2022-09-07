@@ -15,7 +15,7 @@
 
       <input id="landingsearchfilter" type="search" placeholder="Search Products" class="search" v-model="search" style="margin-right: 20px" >
 
-       <div>
+       <!-- <div>
          <select name="" id="">
            <option value=""></option>
            <option value=""></option>
@@ -27,7 +27,8 @@
            <option value=""></option>
            <option value=""></option>
          </select>
-       </div>
+       </div> -->
+
       </div>
     </div>
 
