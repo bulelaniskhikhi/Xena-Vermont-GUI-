@@ -213,4 +213,10 @@ li{
   color: white;
   background-color: black;
 }
+
+button{
+  background: none;
+  color: red;
+  font-weight: lighter;
+}
 </style>

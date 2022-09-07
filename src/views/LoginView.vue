@@ -30,7 +30,8 @@
           <div>
             <label for="" class="fw-light">PASSWORD</label>
             <br />
-            <input v-model="userPassword" type="password" required />
+            <input id="loginpassword" v-model="userPassword" type="password" required />
+          
           </div>
 
           <div>
@@ -106,6 +107,7 @@ export default {
         userName: this.userName
       });
     },
+   
   },
 };
 </script>
