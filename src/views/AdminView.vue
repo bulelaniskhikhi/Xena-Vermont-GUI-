@@ -1,7 +1,25 @@
 <template>
     <div class="container">
+<div style="padding-top: 20vh; display: flex; justify-content: center">
+<div id="header">
+  ADMIN
+</div>
+  
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; width: auto ">
 
+<!-- <router-link >
+  <button>Users</button>
+</router-link>
+    <router-link >
+      <button>Products</button>
+    </router-link> -->
+   
+          <button  style="width: 30%">
+            add
+          </button>
 
+  </div>
 <div class="table-responsive">
    <table class="table " style="margin-top: 5rem">
   <tbody v-if="products">
@@ -61,6 +79,7 @@
             DELETE
           </button>
       </td>
+    
     </tr>
 </tbody>
     
@@ -103,6 +122,7 @@ button {
     color: white;
     margin-top: 2rem;
     border: none;
+    font-family: "Gruppo", cursive;
 }
 
 tr{
@@ -123,5 +143,10 @@ button{
 button:hover{
   color: white;
   background-color: black;
+}
+#header{
+  color: red;
+  font-family: "Gruppo", cursive;
+  font-size: 2rem;
 }
 </style>

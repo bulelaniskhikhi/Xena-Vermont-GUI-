@@ -1,7 +1,12 @@
 import { createStore } from 'vuex'
 
+import swal from 'sweetalert'
+import router from '@/router'
+
 export default createStore({
   state: {
+    user :null,
+    admin: false,
     allprod: null,
     product: null,
     ratingproduct: null
@@ -47,9 +52,29 @@ export default createStore({
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-      
+        context.state.user = data.payload
+        swal({
+          icon: "success",
+          title: `Welcome`,
+          buttons: false,
+          timer: 2000,
+        });
+        router.push({
+          name: "home"
+        })
+      context.dispatch('setAdmin')
       })
     },
+
+    setAdmin(context) {
+      if (context.state.user != null) {
+        if (context.state.user.userRole === "admin") {
+          context.state.admin = true;
+        }
+        // context.dispatch('getWishlist')
+      }
+    },
+
       register(context, payload) {
         fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
         method: 'POST', 

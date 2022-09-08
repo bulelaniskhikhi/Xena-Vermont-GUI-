@@ -23,17 +23,24 @@ const routes = [
     props: true
   },
   {
-    path: '/admin',
+    path: '/admin/',
     name: 'admin',
     component: function () {
       return import('../views/AdminView.vue')
     } 
   },
+  
   {
     path: '/products/rating/:esrbRating',
     name: 'rating',
     component: function () {
       return import('../views/EsrbRating.vue')
+    } 
+  },{
+    path: '/user',
+    name: 'user',
+    component: function () {
+      return import('../views/UserView.vue')
     } 
   }
 ]

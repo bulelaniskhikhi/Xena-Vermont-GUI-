@@ -16,12 +16,19 @@
                </div>
 
                <div id="Navbar-right" class="fw-light">
-
-                   <router-link to="/login" id="loginlink">
+<router-link v-if="user" to="/user" id="loginlink">
 
                        <i class="bi bi-person"></i>
 
                        </router-link>
+
+                   <router-link v-else to="/login" id="loginlink">
+
+                       <i class="bi bi-person"></i>
+
+                       </router-link>
+
+                       
                        
                     <div type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="bi bi-bag" id="chart">
@@ -37,6 +44,16 @@
    
     
 </template>
+<script>
+export default {
+    computed: {
+        user(){
+            return this.$store.state.user
+        }
+        
+    }
+}
+</script>
 
 <style scoped>
 #NavHolder{

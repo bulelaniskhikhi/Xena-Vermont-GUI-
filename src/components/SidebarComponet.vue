@@ -134,7 +134,7 @@
                 
                 
             </li>
-            <li>
+            <li v-if="admin">
                 <router-link to="/admin" style="text-decoration: none; ">
                 <button id="adminbtn" >
          admin
@@ -148,7 +148,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    admin() {
+      return this.$store.state.admin;
+    }
+  }
+};
 </script>
 
 <style scoped>
