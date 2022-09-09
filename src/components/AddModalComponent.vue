@@ -1,29 +1,24 @@
 <template>
-   <div
-    class="modal fade"
-    :id="'update' + product.id"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
+  <!-- manufacturer, bodystyle, model, modelyear, MSRP, fueltype, transmission, img -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
       <div class="modal-content bg-dark text-white">
+
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ product.title }}</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-          
+
+          <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
         </div>
 
         <div class="modal-body">
           <form>
-
             <div class="row">
-                <!-- titles -->
+
+             <!-- titles -->
               <div class="col-md-6">
 
                 <!-- title -->
@@ -31,7 +26,7 @@
 
                   <label for="exampleInputPassword1" class="form-label">Titel :</label>
 
-                  <input v-model="product.title" type="text" class="form-control" />
+                  <input v-model="title" type="text" class="form-control" />
 
                 </div>
 
@@ -40,7 +35,7 @@
 
                   <label for="exampleInputPassword1" class="form-label">Romanji Titel :</label>
 
-                  <input v-model="product.romajiTitle" type="text" class="form-control" />
+                  <input v-model="romajiTitle" type="text" class="form-control" />
 
                 </div>
 
@@ -49,7 +44,7 @@
 
                   <label for="exampleInputPassword1" class="form-label">Kanji Titel :</label>
 
-                  <input v-model="product.kanjiTitle" type="text" class="form-control" />
+                  <input v-model="kanjiTitle" type="text" class="form-control" />
 
                 </div>
               </div>
@@ -61,7 +56,7 @@
                 <div class="mb-3">
                   <label class="form-label">Front Cover Image :</label>
 
-                  <input v-model="product.frontCoverImg" type="text" class="form-control" />
+                  <input v-model="frontCoverImg" type="text" class="form-control" />
 
                 </div>
 
@@ -70,7 +65,7 @@
 
                   <label class="form-label">Back Cover Image :</label>
 
-                  <input v-model="product.backCoverImg" type="text" class="form-control" />
+                  <input v-model="backCoverImg" type="text" class="form-control" />
                 </div>
 
                 <!-- frontDiscCoverImg -->
@@ -78,14 +73,14 @@
 
                   <label class="form-label">Front Disc Cover Image:</label>
 
-                  <input v-model="product.frontDiscCoverImg" type="text" class="form-control" />
+                  <input v-model="frontDiscCoverImg" type="text" class="form-control" />
                 </div>
                 
                 <!-- backDiscCoverimg -->
                 <div class="mb-3">
                   <label class="form-label">Back Disc Cover image :</label>
 
-                  <input v-model="product.backDiscCoverimg" type="text" class="form-control" />
+                  <input v-model="backDiscCoverimg" type="text" class="form-control" />
                 </div>
 
               </div>
@@ -97,7 +92,7 @@
                 <div class="mb-3">
                   <label class="form-label">Realised Date :</label>
 
-                  <input v-model="product.realisedDate" type="text" class="form-control" />
+                  <input v-model="realisedDate" type="text" class="form-control" />
 
                 </div>
 
@@ -106,7 +101,7 @@
 
                   <label class="form-label">Serial Code :</label>
 
-                  <input v-model="product.serialCode" type="text" class="form-control" />
+                  <input v-model="serialCode" type="text" class="form-control" />
                 </div>
 
                 <!-- frontDiscCoverImg -->
@@ -114,14 +109,14 @@
 
                   <label class="form-label">Studio Dev :</label>
 
-                  <input v-model="product.studioDev" type="text" class="form-control" />
+                  <input v-model="studioDev" type="text" class="form-control" />
                 </div>
                 
                 <!-- backDiscCoverimg -->
                 <div class="mb-3">
                   <label class="form-label">Studio Pub :</label>
 
-                  <input v-model="product.studioPub" type="text" class="form-control" />
+                  <input v-model="studioPub" type="text" class="form-control" />
                 </div>
 
               </div>
@@ -133,7 +128,7 @@
                 <div class="mb-3">
                   <label class="form-label">Price in Rands :</label>
 
-                  <input v-model="product.priceRands" type="number" class="form-control" />
+                  <input v-model="priceRands" type="text" class="form-control" />
 
                 </div>
 
@@ -142,7 +137,7 @@
 
                   <label class="form-label">Price in Yens :</label>
 
-                  <input v-model="product.priceYens" type="number" class="form-control" />
+                  <input v-model="priceYens" type="text" class="form-control" />
                 </div>
 
               </div>
@@ -154,7 +149,7 @@
                 <div class="mb-3">
                   <label class="form-label">Game Description :</label>
 
-                  <input v-model="product.gameDesc" type="text" class="form-control" />
+                  <input v-model="gameDesc" type="text" class="form-control" />
 
                 </div>
 
@@ -167,7 +162,7 @@
                 <div class="mb-3">
                   <label class="form-label">ESRB Rating :</label>
 
-                  <select class="form-select" v-model="product.esrbRating" name="fueltype" id="fueltype">
+                  <select class="form-select" v-model="esrbRating" name="fueltype" id="fueltype">
 
                     <option value="" disabled selected>Select your option</option>
 
@@ -185,7 +180,7 @@
                 <div class="mb-3">
                   <label class="form-label">ESRB Rating Image :</label>
 
-                  <select class="form-select" v-model="product.esrbRatingImg" name="fueltype" id="fueltype">
+                  <select class="form-select" v-model="esrbRatingImg" name="fueltype" id="fueltype">
 
                     <option value="" disabled selected>Select your option</option>
 
@@ -208,7 +203,7 @@
                 <div class="mb-3">
                   <label class="form-label">genre :</label>
 
-                  <input v-model="product.genre" type="text" class="form-control" />
+                  <input v-model="genre" type="text" class="form-control" />
 
                 </div>
 
@@ -217,33 +212,24 @@
 
                   <label class="form-label">features :</label>
 
-                  <input v-model="product.features" type="text" class="form-control" />
+                  <input v-model="features" type="text" class="form-control" />
                 </div>
 
               </div>
 
+             
+
             </div>
           </form>
         </div>
-
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button
-            type="button"
-            @click="update"
-            class="btn"
-            data-bs-dismiss="modal"
-          >
-            Update product
+          <button type="button" @click="addProd" class="btn" data-bs-dismiss="modal">
+            Add Product
           </button>
         </div>
-
       </div>
     </div>
   </div>
@@ -251,10 +237,51 @@
 
 <script>
 export default {
-  props: ["product"],
+  data() {
+    return {
+        title:" " ,
+        romajiTitle: " ",
+        kanjiTitle: " ",
+        frontCoverImg: " ",
+        backCoverImg: " ",
+        frontDiscCoverImg: " ",
+        backDiscCoverimg: " ",
+        realisedDate: " ",
+        serialCode: " ",
+        studioDev: " ",
+        studioPub: " ",
+        priceRands: 0.00,
+        priceYens: 0.00,
+        gameDesc: " ",
+        esrbRating: " ",
+        esrbRatingImg: " ",
+        genre: " ",
+        features : " ",   
+    };
+  },
   methods: {
-    update() {
-      this.$store.dispatch("update", this.payload);
+    addProd() {
+      const payload = {
+        title: this.title  ,
+        romajiTitle: this.romajiTitle  ,
+        kanjiTitle: this.kanjiTitle  ,
+        frontCoverImg: this.frontCoverImg  ,
+        backCoverImg: this.backCoverImg  ,
+        frontDiscCoverImg: this.frontDiscCoverImg  ,
+        backDiscCoverimg: this.backDiscCoverimg  ,
+        realisedDate: this.realisedDate  ,
+        serialCode: this.serialCode  ,
+        studioDev: this.studioDev  ,
+        studioPub: this.studioPub  ,
+        priceRands: this.priceRands  ,
+        priceYens: this.priceYens  ,
+        gameDesc: this.gameDesc  ,
+        esrbRating: this.esrbRating  ,
+        esrbRatingImg: this.esrbRatingImg  ,
+        genre: this.genre  ,
+        features: this.features  ,
+      };
+      this.$store.dispatch("addproduct", payload);
     },
   },
 };
@@ -262,8 +289,10 @@ export default {
 
 <style scoped>
   .btn{
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   height:40px;
-  color: red;
+  /* width:202px; */
+  color:rgb(223, 4, 4);
+  font-weight:bold
 }
 </style>

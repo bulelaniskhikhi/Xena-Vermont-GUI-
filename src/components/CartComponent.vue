@@ -11,7 +11,7 @@
   >
        
   <div class="offcanvas-body" style="padding-top: 5rem; color: red">
-    cart items 
+    no cart items 
   </div>
 </div>
 </template>

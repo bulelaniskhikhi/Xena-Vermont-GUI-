@@ -1,25 +1,18 @@
 <template>
     <div class="container">
+
 <div style="padding-top: 20vh; display: flex; justify-content: center">
 <div id="header">
   ADMIN
 </div>
   
 </div>
-<div style="display: flex; justify-content: center; gap: 5px; width: auto ">
+<div v-if="products">
+<div v-for="product in products" :key="product" :product="product">
+ 
+</div>
+</div>
 
-<!-- <router-link >
-  <button>Users</button>
-</router-link>
-    <router-link >
-      <button>Products</button>
-    </router-link> -->
-   
-          <button  style="width: 30%">
-            add
-          </button>
-
-  </div>
 <div class="table-responsive">
    <table class="table" style="margin-top: 5rem">
   <tbody v-if="products">
@@ -45,6 +38,13 @@
       <th colspan="2">Features</th>
       <th colspan="2">EDIT</th>
       <th colspan="2">DELETE</th>
+      <th><a
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fa-regular fa-square-plus"></i>
+              </a></th>
     </tr>
   </thead>
 <tbody>
@@ -94,8 +94,11 @@
     </tr>
 </tbody>
     
-  
+   
   </tbody>
+
+ 
+  
   <!-- Loading screen -->
   <div style=" height: 100vh; display: flex; justify-content: center; align-self: center;" v-else >
     <div style="display: flex; justify-content: center; align-self: center">
@@ -104,25 +107,32 @@
 
     </div>
   </div>
+  
 </table>
 
+
 </div>
-       
+
+
 
 <div v-if="products">
+<AddModal/>
+
 <div v-for="product in products" :key="product">
 <UpdateModal :product="product"/>
 </div>
 </div>
     </div>
+
   
 </template>
 
 <script>
 import UpdateModal from "@/components/UpdateModalComponent.vue";
+import AddModal from "@/components/AddModalComponent.vue";
 
 export default {
-  components: { UpdateModal },
+  components: { UpdateModal, AddModal },
   mounted() {
     this.$store.dispatch("getprod");
   },

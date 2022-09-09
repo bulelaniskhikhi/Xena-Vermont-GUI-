@@ -15,7 +15,9 @@ export default createStore({
     product: null,
     ratingproduct: null
   },
+
   getters: {},
+
   mutations: {
     giveprod(state, products) {
       state.allprod = products
@@ -27,6 +29,7 @@ export default createStore({
       state.ratingproduct = products
     }
   },
+
   actions: {
     async getprod(context) {
       const response = await fetch("https://xena-vermont-api.herokuapp.com/products");
@@ -105,8 +108,8 @@ export default createStore({
         }) 
     },
 
-    delete :async (context, id)=> {
-     await fetch("https://xena-vermont-api.herokuapp.com/products/" + id, {
+    delete: (context, id)=> {
+     fetch("https://xena-vermont-api.herokuapp.com/products/" + id, {
           method: 'DELETE',
         })
         .then((res) => res.json())
@@ -114,8 +117,23 @@ export default createStore({
           console.log(data)
           context.dispatch('getprod');
         }) 
+    },
+    addproduct: (context, payload) => {
+      fetch(heroku + "/products", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+      .then((res) => res.json())
+        .then((data) => {
+          context.state.msg = data.msg;
+          context.dispatch("getprod");
+        });
     }
 
   },
+
   modules: {}
 })
