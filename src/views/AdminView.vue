@@ -21,7 +21,7 @@
 
   </div>
 <div class="table-responsive">
-   <table class="table " style="margin-top: 5rem">
+   <table class="table" style="margin-top: 5rem">
   <tbody v-if="products">
     <thead>
     <tr>
@@ -71,12 +71,23 @@
       <td colspan="2">{{product.features}}</td>
       <td colspan="2">
           <button type="submit" style="width: 100%">
+            <a
+                class="btn"
+                data-bs-toggle="modal"
+                :data-bs-target="'#update' + product.id"
+              >
+
             EDIT
+
+            </a>
           </button>
       </td>
       <td colspan="2">
           <button type="submit" style="width: 100%">
+          <a class="btn" @click="this.$store.dispatch('delete',product.id)"
+                >
             DELETE
+          </a>
           </button>
       </td>
     
@@ -97,14 +108,22 @@
 
 </div>
        
-    </div>
 
+<div v-if="products">
+<div v-for="product in products" :key="product">
+<UpdateModal :product="product"/>
+</div>
+</div>
+    </div>
   
 </template>
 
 <script>
+import UpdateModal from "@/components/UpdateModalComponent.vue";
+
 export default {
-    mounted() {
+  components: { UpdateModal },
+  mounted() {
     this.$store.dispatch("getprod");
   },
   computed: {
@@ -112,39 +131,39 @@ export default {
       return this.$store.state.allprod;
     },
   },
-}
+};
 </script>
 
 <style scoped>
 button {
-    background: #000;
-    width: 40%;
-    color: white;
-    margin-top: 2rem;
-    border: none;
-    font-family: "Gruppo", cursive;
+  background: #000;
+  width: 40%;
+  color: white;
+  margin-top: 2rem;
+  border: none;
+  font-family: "Gruppo", cursive;
 }
 
-tr{
+tr {
   color: red;
-  font-family: "Gruppo", cursive;;
+  font-family: "Gruppo", cursive;
 }
 
-button{
+button {
   background-color: red;
   color: black;
   padding: 5px;
-  width: 70%; 
-  border: none; 
+  width: 70%;
+  border: none;
 
   transition: color, background-color 0.8s;
 }
 
-button:hover{
+button:hover {
   color: white;
   background-color: black;
 }
-#header{
+#header {
   color: red;
   font-family: "Gruppo", cursive;
   font-size: 2rem;

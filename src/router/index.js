@@ -27,7 +27,8 @@ const routes = [
     name: 'admin',
     component: function () {
       return import('../views/AdminView.vue')
-    } 
+    },
+    props: true 
   },
   
   {
