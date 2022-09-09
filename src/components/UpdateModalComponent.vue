@@ -7,7 +7,7 @@
     aria-hidden="true"
   >
     <div class="modal-dialog">
-      <div class="modal-content bg-dark text-white">
+      <div class="modal-content bg-black">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">{{ product.title }}</h5>
           <button
@@ -262,8 +262,28 @@ export default {
 
 <style scoped>
   .btn{
-  background-color: black;
-  height:40px;
-  color: red;
+  background: red;
+  width: 45%;
+  color: black;
+  margin-top: 2rem;
+  border: none;
+  font-family: "Gruppo", cursive;
+  font-size: 1.2rem;
+}
+
+label{
+    font-family: "Gruppo", cursive;
+    color: red;
+    font-size: 1.2rem;
+}
+h5{
+    font-family: "Gruppo", cursive;
+    color: red;
+    font-size: 2rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: center;
 }
 </style>

@@ -4,13 +4,13 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg">
-      <div class="modal-content bg-dark text-white">
+      <div class="modal-content bg-black">
 
         <div class="modal-header">
 
           <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
 
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
 
         </div>
 
@@ -222,7 +222,7 @@
             </div>
           </form>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="display: flex; justify-content: center">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
@@ -289,10 +289,28 @@ export default {
 
 <style scoped>
   .btn{
-  background-color: rgb(0, 0, 0);
-  height:40px;
-  /* width:202px; */
-  color:rgb(223, 4, 4);
-  font-weight:bold
+  background: red;
+  width: 45%;
+  color: black;
+  margin-top: 2rem;
+  border: none;
+  font-family: "Gruppo", cursive;
+  font-size: 1.2rem;
+}
+
+label{
+    font-family: "Gruppo", cursive;
+    color: red;
+    font-size: 1.2rem;
+}
+h5{
+    font-family: "Gruppo", cursive;
+    color: red;
+    font-size: 2rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: center;
 }
 </style>

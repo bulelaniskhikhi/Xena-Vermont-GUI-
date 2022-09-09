@@ -38,13 +38,19 @@
       <th colspan="2">Features</th>
       <th colspan="2">EDIT</th>
       <th colspan="2">DELETE</th>
-      <th><a
+      <th>
+        <button id="add">
+          <a
                 class="btn"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
-                <i class="fa-regular fa-square-plus"></i>
-              </a></th>
+                add
+              </a>
+        </button>
+        
+              
+              </th>
     </tr>
   </thead>
 <tbody>
@@ -177,5 +183,21 @@ button:hover {
   color: red;
   font-family: "Gruppo", cursive;
   font-size: 2rem;
+}
+i{
+  background-color: red;
+}
+#add{
+  background-color: red;
+  color: black;
+  padding: 5px;
+  width: 100%;
+  border: none;
+
+  transition: color, background-color 0.8s;
+}
+#add:hover{
+  color: white;
+  background-color: black;
 }
 </style>
