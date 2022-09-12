@@ -47,8 +47,8 @@ export default createStore({
         .then(data => context.commit('giveratingprod', data.results))
     },
     login(context, payload) {
-      fetch(`http://localhost:3000/users/`, {
-          // fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
+      // fetch(`http://localhost:3000/users/`, {
+          fetch(`https://xena-vermont-api.herokuapp.com/users/`, {
           method: 'PATCH',
           body: JSON.stringify(payload),
           headers: {
